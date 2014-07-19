@@ -29,6 +29,10 @@
 		7AA8720A197A99EA0093CAF0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87209197A99EA0093CAF0 /* Podfile */; };
 		7AA87216197AB20E0093CAF0 /* couponCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87215197AB20E0093CAF0 /* couponCard.m */; };
 		7AA87219197AB3180093CAF0 /* couponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87218197AB3180093CAF0 /* couponViewController.m */; };
+		7AA8721C197AF44D0093CAF0 /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8721B197AF44D0093CAF0 /* LandingPageViewController.m */; };
+		7AA8721E197AF48E0093CAF0 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA8721D197AF48E0093CAF0 /* CoreBluetooth.framework */; };
+		7AA87220197AF4950093CAF0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA8721F197AF4950093CAF0 /* CoreLocation.framework */; };
+		7AA87222197AFB3C0093CAF0 /* beaconDetails in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87221197AFB3C0093CAF0 /* beaconDetails */; };
 		C72EB68AF55C493A86B5CAB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 190FF94B424046D18D81CC47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +77,11 @@
 		7AA87215197AB20E0093CAF0 /* couponCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = couponCard.m; sourceTree = "<group>"; };
 		7AA87217197AB3180093CAF0 /* couponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = couponViewController.h; sourceTree = "<group>"; };
 		7AA87218197AB3180093CAF0 /* couponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = couponViewController.m; sourceTree = "<group>"; };
+		7AA8721A197AF44D0093CAF0 /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
+		7AA8721B197AF44D0093CAF0 /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
+		7AA8721D197AF48E0093CAF0 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		7AA8721F197AF4950093CAF0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7AA87221197AFB3C0093CAF0 /* beaconDetails */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = beaconDetails; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA87220197AF4950093CAF0 /* CoreLocation.framework in Frameworks */,
+				7AA8721E197AF48E0093CAF0 /* CoreBluetooth.framework in Frameworks */,
 				7AA87208197A7B4C0093CAF0 /* Accounts.framework in Frameworks */,
 				7AA87206197A7B470093CAF0 /* Social.framework in Frameworks */,
 				7AA871CE197A6B030093CAF0 /* CoreGraphics.framework in Frameworks */,
@@ -128,6 +139,8 @@
 		7AA871CA197A6B030093CAF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AA8721F197AF4950093CAF0 /* CoreLocation.framework */,
+				7AA8721D197AF48E0093CAF0 /* CoreBluetooth.framework */,
 				7AA87207197A7B4C0093CAF0 /* Accounts.framework */,
 				7AA87205197A7B470093CAF0 /* Social.framework */,
 				7AA871CB197A6B030093CAF0 /* Foundation.framework */,
@@ -143,7 +156,10 @@
 		7AA871D3197A6B030093CAF0 /* valet */ = {
 			isa = PBXGroup;
 			children = (
+				7AA87221197AFB3C0093CAF0 /* beaconDetails */,
 				7AA87200197A6B1A0093CAF0 /* Main.storyboard */,
+				7AA8721A197AF44D0093CAF0 /* LandingPageViewController.h */,
+				7AA8721B197AF44D0093CAF0 /* LandingPageViewController.m */,
 				7AA87217197AB3180093CAF0 /* couponViewController.h */,
 				7AA87218197AB3180093CAF0 /* couponViewController.m */,
 				7AA87214197AB20E0093CAF0 /* couponCard.h */,
@@ -265,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA87222197AFB3C0093CAF0 /* beaconDetails in Resources */,
 				7AA87201197A6B1A0093CAF0 /* Main.storyboard in Resources */,
 				7AA871D8197A6B030093CAF0 /* InfoPlist.strings in Resources */,
 				7AA8720A197A99EA0093CAF0 /* Podfile in Resources */,
@@ -320,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA8721C197AF44D0093CAF0 /* LandingPageViewController.m in Sources */,
 				7AA871E1197A6B030093CAF0 /* valet.xcdatamodeld in Sources */,
 				7AA871DE197A6B030093CAF0 /* AppDelegate.m in Sources */,
 				7AA87219197AB3180093CAF0 /* couponViewController.m in Sources */,

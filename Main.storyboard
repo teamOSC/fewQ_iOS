@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="-445" y="1360"/>
         </scene>
-        <!--View Controller-->
+        <!--Landing Page View Controller-->
         <scene sceneID="lxN-ia-LV9">
             <objects>
-                <viewController id="HWU-pb-38s" sceneMemberID="viewController">
+                <viewController id="HWU-pb-38s" customClass="LandingPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6S3-a9-eCr"/>
                         <viewControllerLayoutGuide type="bottom" id="XLp-fF-EgL"/>

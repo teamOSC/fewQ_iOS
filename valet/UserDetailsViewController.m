@@ -42,7 +42,10 @@
 {
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+    if ([defaults objectForKey:@"emailID"])
+    {
+        [self performSegueWithIdentifier:@"loggedIn" sender:self];
+    }
     NSString *name=[defaults objectForKey:@"name"];
     NSString *emailID=[defaults objectForKey:@"emailID"];
     NSString *phoneNo=[defaults objectForKey:@"phoneNo"];
@@ -59,18 +62,30 @@
 }
 - (IBAction)login:(id)sender
 {
+    NSString *name=self.nameField.text;
+    NSString *emailID=self.emailIDField.text;
+    NSString *phoneNo=self.phoneNoField.text;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([self isValidEmail:emailID])
+    {
+        [defaults setObject:name forKey:@"name"];
+        [defaults setObject:emailID forKey:@"emailID"];
+        [defaults setObject:phoneNo forKey:@"phoneNo"];
+    }
+    
+    else
+    {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Error" message:@"invalid Email" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
+    }
 
-    NSString *name=[defaults objectForKey:@"name"];
-    NSString *emailID=[defaults objectForKey:@"emailID"];
-    NSString *phoneNo=[defaults objectForKey:@"phoneNo"];
     
     
     //if there is a connection going on just cancel it.
     [self.connection cancel];
     //initialize new mutable data
-#warning DO NOT TOUCH
         NSMutableData *data = [[NSMutableData alloc] init];
         self.receivedData = data;
         NSURL *url=[[NSURL alloc]initWithString:@"http://tosc.in:8080/user_register"];
@@ -93,9 +108,10 @@
         
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.connection = connection;
+        [connection start];
+
     UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"success" message:@"You have beeen registered" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
     [alert show];
-        [connection start];
     
 }
 - (IBAction)saveButton:(id)sender

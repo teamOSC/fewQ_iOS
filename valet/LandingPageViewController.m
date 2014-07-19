@@ -7,13 +7,19 @@
 //
 
 #import "LandingPageViewController.h"
+#import "userDisplayViewController.h"
 #define UUID @"6470FCEB-0F6B-4609-AA4C-2D0F92F0FB2E"
 static NSString * treasureId = @"rdvApp.directionTest";
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 
 @interface LandingPageViewController ()
-
+{
+    NSMutableArray *items;
+    NSMutableArray *history;
+    NSString *token;
+    NSString *type;
+}
 @end
 
 @implementation LandingPageViewController
@@ -31,7 +37,7 @@ static NSString * treasureId = @"rdvApp.directionTest";
 {
     [super viewDidLoad];
     [self.navigationItem setHidesBackButton:YES];
-    
+    items=[[NSMutableArray alloc] init];
     NSUUID * uid = [[NSUUID alloc] initWithUUIDString:UUID];
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uid identifier:treasureId];
     // When set to YES, the location manager sends beacon notifications when the user turns on the display and the device is already inside the region.
@@ -81,18 +87,24 @@ static NSString * treasureId = @"rdvApp.directionTest";
     NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
 
     [NSURLConnection sendAsynchronousRequest:request queue:myQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",newStr);
-        
-        NSDictionary *jsonDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        if ([jsonDict isKindOfClass:[NSDictionary class]] && data!=nil)
+        if (data!=nil)
         {
-            NSArray *items=[jsonDict objectForKey:@"items"];
-            NSString *token=[jsonDict objectForKey:@"token"];
-            [myQueue cancelAllOperations];
+            NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",newStr);
             
+            NSDictionary *jsonDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            if ([jsonDict isKindOfClass:[NSDictionary class]] )
+            {
+                items=[jsonDict objectForKey:@"items"];
+                token=[jsonDict objectForKey:@"token"];
+                history=[jsonDict objectForKey:@"history"];
+                [myQueue cancelAllOperations];
+                [self performSegueWithIdentifier:@"userDisplay" sender:self];
+                
+            }
+
         }
-    }];
+}];
 
     
     
@@ -105,16 +117,23 @@ static NSString * treasureId = @"rdvApp.directionTest";
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"userDisplay"])
+    {
+        userDisplayViewController *vc=segue.destinationViewController;
+        vc.token=token;
+    
+        vc.type=type;
+        vc.history=history;
+        vc.items=items;
+    }
 }
-*/
+
 
 
 

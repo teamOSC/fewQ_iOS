@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface userDisplayViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-
+@property NSMutableArray *items;
+@property NSString *token;
+@property NSMutableArray *history;
+@property NSString *type;
 @end

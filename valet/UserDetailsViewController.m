@@ -176,11 +176,6 @@
     NSLog(@"Connection failed: %@", [error description]);
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    //Getting your response string
-    NSString *responseString = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    self.responseData = nil;
-}
 
 /*
 #pragma mark - Navigation

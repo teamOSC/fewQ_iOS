@@ -7,7 +7,7 @@
 //
 
 #import "userDisplayViewController.h"
-
+#import "userDisplayTableViewCell.h"
 @interface userDisplayViewController ()
 
 @end
@@ -33,6 +33,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.items count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    userDisplayTableViewCell *cell=[[userDisplayTableViewCell alloc]init];
+    return cell;
 }
 
 /*

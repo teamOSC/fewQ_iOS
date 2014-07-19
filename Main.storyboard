@@ -101,6 +101,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bu8-tF-3XJ"/>
+                    <connections>
+                        <segue destination="BQl-cP-Rxr" kind="push" identifier="userDisplay" id="qlU-GH-wsa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgT-Lm-TOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,14 +126,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="170" id="Ao4-qx-9aB">
-                                        <rect key="frame" x="0.0" y="22" width="280" height="170"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="Ao4-qx-9aB" customClass="userDisplayTableViewCell">
+                                        <rect key="frame" x="0.0" y="86" width="280" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ao4-qx-9aB" id="qOo-7w-kng">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YMt-hG-NQZ">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YMt-hG-NQZ" customClass="AsyncImageView">
                                                     <rect key="frame" x="20" y="20" width="95" height="129"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
@@ -148,16 +151,21 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="3Ez-GJ-3JR" id="2vb-qt-ofB"/>
+                                            <outlet property="productName" destination="FZl-Z9-KLL" id="S0H-Wb-F6L"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="k7f-Gm-Pda"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cv7-xa-Slk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="2062"/>
+            <point key="canvasLocation" x="711" y="2030"/>
         </scene>
         <!--User Details View Controller-->
         <scene sceneID="u7y-rG-y14">

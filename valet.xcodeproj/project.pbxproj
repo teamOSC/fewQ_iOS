@@ -35,6 +35,7 @@
 		7AA87222197AFB3C0093CAF0 /* beaconDetails in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87221197AFB3C0093CAF0 /* beaconDetails */; };
 		7AA87225197B15D30093CAF0 /* userDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87224197B15D30093CAF0 /* userDisplayViewController.m */; };
 		7AA87228197B20450093CAF0 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87227197B20450093CAF0 /* AsyncImageView.m */; };
+		7AA8722C197B2A130093CAF0 /* userDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8722B197B2A130093CAF0 /* userDisplayTableViewCell.m */; };
 		C72EB68AF55C493A86B5CAB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 190FF94B424046D18D81CC47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		7AA87224197B15D30093CAF0 /* userDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userDisplayViewController.m; sourceTree = "<group>"; };
 		7AA87226197B20450093CAF0 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		7AA87227197B20450093CAF0 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		7AA8722A197B2A130093CAF0 /* userDisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userDisplayTableViewCell.h; sourceTree = "<group>"; };
+		7AA8722B197B2A130093CAF0 /* userDisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userDisplayTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +168,7 @@
 				7AA87229197B21C60093CAF0 /* asyncImage */,
 				7AA87221197AFB3C0093CAF0 /* beaconDetails */,
 				7AA87200197A6B1A0093CAF0 /* Main.storyboard */,
-				7AA87223197B15D30093CAF0 /* userDisplayViewController.h */,
-				7AA87224197B15D30093CAF0 /* userDisplayViewController.m */,
+				7AA8722D197B2A1B0093CAF0 /* userDisplay */,
 				7AA8721A197AF44D0093CAF0 /* LandingPageViewController.h */,
 				7AA8721B197AF44D0093CAF0 /* LandingPageViewController.m */,
 				7AA87217197AB3180093CAF0 /* couponViewController.h */,
@@ -220,6 +222,17 @@
 				7AA87227197B20450093CAF0 /* AsyncImageView.m */,
 			);
 			name = asyncImage;
+			sourceTree = "<group>";
+		};
+		7AA8722D197B2A1B0093CAF0 /* userDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				7AA8722A197B2A130093CAF0 /* userDisplayTableViewCell.h */,
+				7AA8722B197B2A130093CAF0 /* userDisplayTableViewCell.m */,
+				7AA87223197B15D30093CAF0 /* userDisplayViewController.h */,
+				7AA87224197B15D30093CAF0 /* userDisplayViewController.m */,
+			);
+			name = userDisplay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +373,7 @@
 				7AA871E1197A6B030093CAF0 /* valet.xcdatamodeld in Sources */,
 				7AA87225197B15D30093CAF0 /* userDisplayViewController.m in Sources */,
 				7AA871DE197A6B030093CAF0 /* AppDelegate.m in Sources */,
+				7AA8722C197B2A130093CAF0 /* userDisplayTableViewCell.m in Sources */,
 				7AA87219197AB3180093CAF0 /* couponViewController.m in Sources */,
 				7AA87216197AB20E0093CAF0 /* couponCard.m in Sources */,
 				7AA87204197A6C730093CAF0 /* UserDetailsViewController.m in Sources */,

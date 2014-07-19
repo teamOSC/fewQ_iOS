@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <CoreLocation/CoreLocation.h>
-@interface LandingPageViewController : UIViewController<CLLocationManagerDelegate>
+@interface LandingPageViewController : UIViewController<CLLocationManagerDelegate,NSURLSessionDelegate>
 @property (strong, nonatomic) CLBeaconRegion *beaconRegion;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @end

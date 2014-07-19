@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserDetailsViewController : UIViewController
+@interface UserDetailsViewController : UIViewController<NSURLConnectionDelegate>
 
 @end

@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *emailIDField;
 @property (strong, nonatomic) IBOutlet UITextField *phoneNoField;
-//something
+@property (strong,nonatomic) NSMutableData *responseData;
 @property (retain, nonatomic) NSURLConnection *connection;
 @property (retain, nonatomic) NSMutableData *receivedData;
 @property (strong,nonatomic) NSString *event;
@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"emailID"])
     {
@@ -60,6 +61,9 @@
 
     // Do any additional setup after loading the view.
 }
+
+
+
 - (IBAction)login:(id)sender
 {
     NSString *name=self.nameField.text;
@@ -103,12 +107,12 @@
         [request setURL:[url2 standardizedURL]];
         [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
         [request setHTTPBody:[postData dataUsingEncoding:NSUTF8StringEncoding]];
-        NSLog(@"%@",[request HTTPBody]);
-        
+    
         
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.connection = connection;
         [connection start];
+    
 
     UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"success" message:@"You have beeen registered" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
     [alert show];
@@ -153,6 +157,29 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    [self.responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [self.responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Connection failed: %@", [error description]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    //Getting your response string
+    NSString *responseString = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
+    self.responseData = nil;
 }
 
 /*

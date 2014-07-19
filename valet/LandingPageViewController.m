@@ -9,6 +9,8 @@
 #import "LandingPageViewController.h"
 #define UUID @"6470FCEB-0F6B-4609-AA4C-2D0F92F0FB2E"
 static NSString * treasureId = @"rdvApp.directionTest";
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
 
 @interface LandingPageViewController ()
 
@@ -51,14 +53,52 @@ static NSString * treasureId = @"rdvApp.directionTest";
 }
 
 
--(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-    UILocalNotification * notification = [[UILocalNotification alloc] init];
-    notification.alertBody = @"There be a treasure hiding nearby. Find it me hearties.";
-    notification.soundName = @"arrr.caf";
-    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+    [beacons sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"rssi" ascending:YES]]];
+    if ([beacons count]>0)
+    {
+        CLBeacon *closestBeacon=[beacons objectAtIndex:0];
+        NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+        NSString *email=[defaults objectForKey:@"emailID"];
+        NSString *cid=[NSString stringWithFormat:@"%@,%@,%@",[closestBeacon.proximityUUID UUIDString],closestBeacon.major,closestBeacon.minor];
+        [self sendHTTPGetWithEmail:email andBeaconID:cid];
+    }
 }
 
+
+-(void) sendHTTPGetWithEmail:(NSString *)email andBeaconID:(NSString *)cid
+{
+
+    NSString *serverAddress=[NSString stringWithFormat:@"%@?email=%@&beacon_id=%@",@"http://tosc.in:8080/customer_in",email,cid];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"GET"];
+    
+   
+    NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
+
+    [NSURLConnection sendAsynchronousRequest:request queue:myQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",newStr);
+        
+        NSDictionary *jsonDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if ([jsonDict isKindOfClass:[NSDictionary class]] && data!=nil)
+        {
+            NSArray *items=[jsonDict objectForKey:@"items"];
+            NSString *token=[jsonDict objectForKey:@"token"];
+            [myQueue cancelAllOperations];
+            
+        }
+    }];
+
+    
+    
+    
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

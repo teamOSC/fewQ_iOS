@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7AA871CC197A6B030093CAF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871CB197A6B030093CAF0 /* Foundation.framework */; };
+		7AA871CE197A6B030093CAF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871CD197A6B030093CAF0 /* CoreGraphics.framework */; };
+		7AA871D0197A6B030093CAF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871CF197A6B030093CAF0 /* UIKit.framework */; };
+		7AA871D2197A6B030093CAF0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871D1197A6B030093CAF0 /* CoreData.framework */; };
+		7AA871D8197A6B030093CAF0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AA871D6197A6B030093CAF0 /* InfoPlist.strings */; };
+		7AA871DA197A6B030093CAF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA871D9197A6B030093CAF0 /* main.m */; };
+		7AA871DE197A6B030093CAF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA871DD197A6B030093CAF0 /* AppDelegate.m */; };
+		7AA871E1197A6B030093CAF0 /* valet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AA871DF197A6B030093CAF0 /* valet.xcdatamodeld */; };
+		7AA871E3197A6B030093CAF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA871E2197A6B030093CAF0 /* Images.xcassets */; };
+		7AA871EA197A6B030093CAF0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871E9197A6B030093CAF0 /* XCTest.framework */; };
+		7AA871EB197A6B030093CAF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871CB197A6B030093CAF0 /* Foundation.framework */; };
+		7AA871EC197A6B030093CAF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871CF197A6B030093CAF0 /* UIKit.framework */; };
+		7AA871ED197A6B030093CAF0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871D1197A6B030093CAF0 /* CoreData.framework */; };
+		7AA871F5197A6B030093CAF0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AA871F3197A6B030093CAF0 /* InfoPlist.strings */; };
+		7AA871F7197A6B030093CAF0 /* valetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA871F6197A6B030093CAF0 /* valetTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AA871EE197A6B030093CAF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AA871C0197A6B030093CAF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AA871C7197A6B030093CAF0;
+			remoteInfo = valet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7AA871C8197A6B030093CAF0 /* valet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = valet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA871CB197A6B030093CAF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7AA871CD197A6B030093CAF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7AA871CF197A6B030093CAF0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7AA871D1197A6B030093CAF0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7AA871D5197A6B030093CAF0 /* valet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "valet-Info.plist"; sourceTree = "<group>"; };
+		7AA871D7197A6B030093CAF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7AA871D9197A6B030093CAF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7AA871DB197A6B030093CAF0 /* valet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "valet-Prefix.pch"; sourceTree = "<group>"; };
+		7AA871DC197A6B030093CAF0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7AA871DD197A6B030093CAF0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7AA871E0197A6B030093CAF0 /* valet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = valet.xcdatamodel; sourceTree = "<group>"; };
+		7AA871E2197A6B030093CAF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7AA871E8197A6B030093CAF0 /* valetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = valetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA871E9197A6B030093CAF0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7AA871F2197A6B030093CAF0 /* valetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "valetTests-Info.plist"; sourceTree = "<group>"; };
+		7AA871F4197A6B030093CAF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7AA871F6197A6B030093CAF0 /* valetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = valetTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7AA871C5197A6B030093CAF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA871CE197A6B030093CAF0 /* CoreGraphics.framework in Frameworks */,
+				7AA871D2197A6B030093CAF0 /* CoreData.framework in Frameworks */,
+				7AA871D0197A6B030093CAF0 /* UIKit.framework in Frameworks */,
+				7AA871CC197A6B030093CAF0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA871E5197A6B030093CAF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA871EA197A6B030093CAF0 /* XCTest.framework in Frameworks */,
+				7AA871ED197A6B030093CAF0 /* CoreData.framework in Frameworks */,
+				7AA871EC197A6B030093CAF0 /* UIKit.framework in Frameworks */,
+				7AA871EB197A6B030093CAF0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7AA871BF197A6B030093CAF0 = {
+			isa = PBXGroup;
+			children = (
+				7AA871D3197A6B030093CAF0 /* valet */,
+				7AA871F0197A6B030093CAF0 /* valetTests */,
+				7AA871CA197A6B030093CAF0 /* Frameworks */,
+				7AA871C9197A6B030093CAF0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7AA871C9197A6B030093CAF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7AA871C8197A6B030093CAF0 /* valet.app */,
+				7AA871E8197A6B030093CAF0 /* valetTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7AA871CA197A6B030093CAF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AA871CB197A6B030093CAF0 /* Foundation.framework */,
+				7AA871CD197A6B030093CAF0 /* CoreGraphics.framework */,
+				7AA871CF197A6B030093CAF0 /* UIKit.framework */,
+				7AA871D1197A6B030093CAF0 /* CoreData.framework */,
+				7AA871E9197A6B030093CAF0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7AA871D3197A6B030093CAF0 /* valet */ = {
+			isa = PBXGroup;
+			children = (
+				7AA871DC197A6B030093CAF0 /* AppDelegate.h */,
+				7AA871DD197A6B030093CAF0 /* AppDelegate.m */,
+				7AA871E2197A6B030093CAF0 /* Images.xcassets */,
+				7AA871DF197A6B030093CAF0 /* valet.xcdatamodeld */,
+				7AA871D4197A6B030093CAF0 /* Supporting Files */,
+			);
+			path = valet;
+			sourceTree = "<group>";
+		};
+		7AA871D4197A6B030093CAF0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7AA871D5197A6B030093CAF0 /* valet-Info.plist */,
+				7AA871D6197A6B030093CAF0 /* InfoPlist.strings */,
+				7AA871D9197A6B030093CAF0 /* main.m */,
+				7AA871DB197A6B030093CAF0 /* valet-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AA871F0197A6B030093CAF0 /* valetTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AA871F6197A6B030093CAF0 /* valetTests.m */,
+				7AA871F1197A6B030093CAF0 /* Supporting Files */,
+			);
+			path = valetTests;
+			sourceTree = "<group>";
+		};
+		7AA871F1197A6B030093CAF0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7AA871F2197A6B030093CAF0 /* valetTests-Info.plist */,
+				7AA871F3197A6B030093CAF0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AA871C7197A6B030093CAF0 /* valet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AA871FA197A6B030093CAF0 /* Build configuration list for PBXNativeTarget "valet" */;
+			buildPhases = (
+				7AA871C4197A6B030093CAF0 /* Sources */,
+				7AA871C5197A6B030093CAF0 /* Frameworks */,
+				7AA871C6197A6B030093CAF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = valet;
+			productName = valet;
+			productReference = 7AA871C8197A6B030093CAF0 /* valet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7AA871E7197A6B030093CAF0 /* valetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AA871FD197A6B030093CAF0 /* Build configuration list for PBXNativeTarget "valetTests" */;
+			buildPhases = (
+				7AA871E4197A6B030093CAF0 /* Sources */,
+				7AA871E5197A6B030093CAF0 /* Frameworks */,
+				7AA871E6197A6B030093CAF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AA871EF197A6B030093CAF0 /* PBXTargetDependency */,
+			);
+			name = valetTests;
+			productName = valetTests;
+			productReference = 7AA871E8197A6B030093CAF0 /* valetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7AA871C0197A6B030093CAF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Robin's code kitchen";
+				TargetAttributes = {
+					7AA871E7197A6B030093CAF0 = {
+						TestTargetID = 7AA871C7197A6B030093CAF0;
+					};
+				};
+			};
+			buildConfigurationList = 7AA871C3197A6B030093CAF0 /* Build configuration list for PBXProject "valet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7AA871BF197A6B030093CAF0;
+			productRefGroup = 7AA871C9197A6B030093CAF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AA871C7197A6B030093CAF0 /* valet */,
+				7AA871E7197A6B030093CAF0 /* valetTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7AA871C6197A6B030093CAF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA871D8197A6B030093CAF0 /* InfoPlist.strings in Resources */,
+				7AA871E3197A6B030093CAF0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA871E6197A6B030093CAF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA871F5197A6B030093CAF0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7AA871C4197A6B030093CAF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA871E1197A6B030093CAF0 /* valet.xcdatamodeld in Sources */,
+				7AA871DE197A6B030093CAF0 /* AppDelegate.m in Sources */,
+				7AA871DA197A6B030093CAF0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA871E4197A6B030093CAF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA871F7197A6B030093CAF0 /* valetTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AA871EF197A6B030093CAF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AA871C7197A6B030093CAF0 /* valet */;
+			targetProxy = 7AA871EE197A6B030093CAF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7AA871D6197A6B030093CAF0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AA871D7197A6B030093CAF0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7AA871F3197A6B030093CAF0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AA871F4197A6B030093CAF0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7AA871F8197A6B030093CAF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7AA871F9197A6B030093CAF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7AA871FB197A6B030093CAF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "valet/valet-Prefix.pch";
+				INFOPLIST_FILE = "valet/valet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7AA871FC197A6B030093CAF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "valet/valet-Prefix.pch";
+				INFOPLIST_FILE = "valet/valet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7AA871FE197A6B030093CAF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/valet.app/valet";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "valet/valet-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "valetTests/valetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7AA871FF197A6B030093CAF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/valet.app/valet";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "valet/valet-Prefix.pch";
+				INFOPLIST_FILE = "valetTests/valetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7AA871C3197A6B030093CAF0 /* Build configuration list for PBXProject "valet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA871F8197A6B030093CAF0 /* Debug */,
+				7AA871F9197A6B030093CAF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AA871FA197A6B030093CAF0 /* Build configuration list for PBXNativeTarget "valet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA871FB197A6B030093CAF0 /* Debug */,
+				7AA871FC197A6B030093CAF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7AA871FD197A6B030093CAF0 /* Build configuration list for PBXNativeTarget "valetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA871FE197A6B030093CAF0 /* Debug */,
+				7AA871FF197A6B030093CAF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7AA871DF197A6B030093CAF0 /* valet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7AA871E0197A6B030093CAF0 /* valet.xcdatamodel */,
+			);
+			currentVersion = 7AA871E0197A6B030093CAF0 /* valet.xcdatamodel */;
+			path = valet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7AA871C0197A6B030093CAF0 /* Project object */;
+}

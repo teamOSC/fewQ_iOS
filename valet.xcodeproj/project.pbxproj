@@ -22,6 +22,8 @@
 		7AA871ED197A6B030093CAF0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA871D1197A6B030093CAF0 /* CoreData.framework */; };
 		7AA871F5197A6B030093CAF0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AA871F3197A6B030093CAF0 /* InfoPlist.strings */; };
 		7AA871F7197A6B030093CAF0 /* valetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA871F6197A6B030093CAF0 /* valetTests.m */; };
+		7AA87201197A6B1A0093CAF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87200197A6B1A0093CAF0 /* Main.storyboard */; };
+		7AA87204197A6C730093CAF0 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87203197A6C730093CAF0 /* UserDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		7AA871F2197A6B030093CAF0 /* valetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "valetTests-Info.plist"; sourceTree = "<group>"; };
 		7AA871F4197A6B030093CAF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7AA871F6197A6B030093CAF0 /* valetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = valetTests.m; sourceTree = "<group>"; };
+		7AA87200197A6B1A0093CAF0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		7AA87202197A6C730093CAF0 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		7AA87203197A6C730093CAF0 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +120,11 @@
 		7AA871D3197A6B030093CAF0 /* valet */ = {
 			isa = PBXGroup;
 			children = (
+				7AA87200197A6B1A0093CAF0 /* Main.storyboard */,
 				7AA871DC197A6B030093CAF0 /* AppDelegate.h */,
 				7AA871DD197A6B030093CAF0 /* AppDelegate.m */,
+				7AA87202197A6C730093CAF0 /* UserDetailsViewController.h */,
+				7AA87203197A6C730093CAF0 /* UserDetailsViewController.m */,
 				7AA871E2197A6B030093CAF0 /* Images.xcassets */,
 				7AA871DF197A6B030093CAF0 /* valet.xcdatamodeld */,
 				7AA871D4197A6B030093CAF0 /* Supporting Files */,
@@ -228,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA87201197A6B1A0093CAF0 /* Main.storyboard in Resources */,
 				7AA871D8197A6B030093CAF0 /* InfoPlist.strings in Resources */,
 				7AA871E3197A6B030093CAF0 /* Images.xcassets in Resources */,
 			);
@@ -250,6 +259,7 @@
 			files = (
 				7AA871E1197A6B030093CAF0 /* valet.xcdatamodeld in Sources */,
 				7AA871DE197A6B030093CAF0 /* AppDelegate.m in Sources */,
+				7AA87204197A6C730093CAF0 /* UserDetailsViewController.m in Sources */,
 				7AA871DA197A6B030093CAF0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

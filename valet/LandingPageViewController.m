@@ -7,6 +7,8 @@
 //
 
 #import "LandingPageViewController.h"
+#define UUID @"6470FCEB-0F6B-4609-AA4C-2D0F92F0FB2E"
+static NSString * treasureId = @"rdvApp.directionTest";
 
 @interface LandingPageViewController ()
 
@@ -27,7 +29,34 @@
 {
     [super viewDidLoad];
     [self.navigationItem setHidesBackButton:YES];
+    
+    NSUUID * uid = [[NSUUID alloc] initWithUUIDString:UUID];
+    self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uid identifier:treasureId];
+    // When set to YES, the location manager sends beacon notifications when the user turns on the display and the device is already inside the region.
+    [self.beaconRegion setNotifyEntryStateOnDisplay:YES];
+    [self.beaconRegion setNotifyOnEntry:YES];
+    [self.beaconRegion setNotifyOnExit:YES];
+    
+    [self configureReceiver];
     // Do any additional setup after loading the view.
+}
+
+
+-(void)configureReceiver {
+    // Location manager.
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
+}
+
+
+-(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+{
+    UILocalNotification * notification = [[UILocalNotification alloc] init];
+    notification.alertBody = @"There be a treasure hiding nearby. Find it me hearties.";
+    notification.soundName = @"arrr.caf";
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
 - (void)didReceiveMemoryWarning

@@ -113,6 +113,8 @@
     UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"success" message:@"You have beeen registered" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
     [alert show];
     
+    [self performSegueWithIdentifier:@"loggedIn" sender:self];
+    
 }
 - (IBAction)saveButton:(id)sender
 {

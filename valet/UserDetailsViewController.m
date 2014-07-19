@@ -7,13 +7,20 @@
 //
 
 #import "UserDetailsViewController.h"
+#import <Social/Social.h>
+
+#import <Accounts/Accounts.h>
 
 @interface UserDetailsViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *emailIDField;
-@property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UITextField *phoneNoField;
 //something
+@property (retain, nonatomic) NSURLConnection *connection;
+@property (retain, nonatomic) NSMutableData *receivedData;
+@property (strong,nonatomic) NSString *event;
+
+
 @end
 
 @implementation UserDetailsViewController
@@ -38,20 +45,63 @@
     
     NSString *name=[defaults objectForKey:@"name"];
     NSString *emailID=[defaults objectForKey:@"emailID"];
-    NSString *password=[defaults objectForKey:@"password"];
     NSString *phoneNo=[defaults objectForKey:@"phoneNo"];
     
     self.nameField.text=name;
     self.emailIDField.text=emailID;
-    self.passwordField.text=password;
     self.phoneNoField.text=phoneNo;
+    
+    
+
+ 
+
     // Do any additional setup after loading the view.
+}
+- (IBAction)login:(id)sender
+{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSString *name=[defaults objectForKey:@"name"];
+    NSString *emailID=[defaults objectForKey:@"emailID"];
+    NSString *phoneNo=[defaults objectForKey:@"phoneNo"];
+    
+    
+    //if there is a connection going on just cancel it.
+    [self.connection cancel];
+    //initialize new mutable data
+#warning DO NOT TOUCH
+        NSMutableData *data = [[NSMutableData alloc] init];
+        self.receivedData = data;
+        NSURL *url=[[NSURL alloc]initWithString:@"http://tosc.in:8080/user_register"];
+        
+        //initialize a request from url
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[url standardizedURL]];
+        
+        //set http method
+        [request setHTTPMethod:@"GET"];
+        //initialize a post data
+        //NSString *postData = @"entry.1910052895=iOS&entry.1103196731=vajhcsd&entry.399168322=BJKSVDB&entry.1544699882=kajfnk&entry.554333590=khdsfbvkj";
+        NSString *postData=[NSString stringWithFormat:@"name=%@&email=%@&phone=%@",name,emailID,phoneNo];
+        //set request content type we MUST set this value.
+        NSURL *url2=[[NSURL alloc]initWithString:[NSString stringWithFormat:@"%@?%@",url,postData]];
+        [request setURL:[url2 standardizedURL]];
+        [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:[postData dataUsingEncoding:NSUTF8StringEncoding]];
+        NSLog(@"%@",[request HTTPBody]);
+        
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        self.connection = connection;
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"success" message:@"You have beeen registered" delegate:self cancelButtonTitle:@"okay" otherButtonTitles: nil];
+    [alert show];
+        [connection start];
+    
 }
 - (IBAction)saveButton:(id)sender
 {
     NSString *name=self.nameField.text;
     NSString *emailID=self.emailIDField.text;
-    NSString *password=self.passwordField.text;
     NSString *phoneNo=self.phoneNoField.text;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -60,7 +110,6 @@
     {
         [defaults setObject:name forKey:@"name"];
         [defaults setObject:emailID forKey:@"emailID"];
-        [defaults setObject:password forKey:@"password"];
         [defaults setObject:phoneNo forKey:@"phoneNo"];
     }
     

@@ -24,6 +24,12 @@
 		7AA871F7197A6B030093CAF0 /* valetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA871F6197A6B030093CAF0 /* valetTests.m */; };
 		7AA87201197A6B1A0093CAF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87200197A6B1A0093CAF0 /* Main.storyboard */; };
 		7AA87204197A6C730093CAF0 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87203197A6C730093CAF0 /* UserDetailsViewController.m */; };
+		7AA87206197A7B470093CAF0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA87205197A7B470093CAF0 /* Social.framework */; };
+		7AA87208197A7B4C0093CAF0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA87207197A7B4C0093CAF0 /* Accounts.framework */; };
+		7AA8720A197A99EA0093CAF0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87209197A99EA0093CAF0 /* Podfile */; };
+		7AA87216197AB20E0093CAF0 /* couponCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87215197AB20E0093CAF0 /* couponCard.m */; };
+		7AA87219197AB3180093CAF0 /* couponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87218197AB3180093CAF0 /* couponViewController.m */; };
+		C72EB68AF55C493A86B5CAB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 190FF94B424046D18D81CC47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		190FF94B424046D18D81CC47 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EDC7DC14BD04C2B9F48E188 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7AA871C8197A6B030093CAF0 /* valet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = valet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA871CB197A6B030093CAF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7AA871CD197A6B030093CAF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +66,13 @@
 		7AA87200197A6B1A0093CAF0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		7AA87202197A6C730093CAF0 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		7AA87203197A6C730093CAF0 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		7AA87205197A7B470093CAF0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7AA87207197A7B4C0093CAF0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		7AA87209197A99EA0093CAF0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		7AA87214197AB20E0093CAF0 /* couponCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = couponCard.h; sourceTree = "<group>"; };
+		7AA87215197AB20E0093CAF0 /* couponCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = couponCard.m; sourceTree = "<group>"; };
+		7AA87217197AB3180093CAF0 /* couponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = couponViewController.h; sourceTree = "<group>"; };
+		7AA87218197AB3180093CAF0 /* couponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = couponViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +80,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA87208197A7B4C0093CAF0 /* Accounts.framework in Frameworks */,
+				7AA87206197A7B470093CAF0 /* Social.framework in Frameworks */,
 				7AA871CE197A6B030093CAF0 /* CoreGraphics.framework in Frameworks */,
 				7AA871D2197A6B030093CAF0 /* CoreData.framework in Frameworks */,
 				7AA871D0197A6B030093CAF0 /* UIKit.framework in Frameworks */,
 				7AA871CC197A6B030093CAF0 /* Foundation.framework in Frameworks */,
+				C72EB68AF55C493A86B5CAB7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,10 +107,12 @@
 		7AA871BF197A6B030093CAF0 = {
 			isa = PBXGroup;
 			children = (
+				7AA87209197A99EA0093CAF0 /* Podfile */,
 				7AA871D3197A6B030093CAF0 /* valet */,
 				7AA871F0197A6B030093CAF0 /* valetTests */,
 				7AA871CA197A6B030093CAF0 /* Frameworks */,
 				7AA871C9197A6B030093CAF0 /* Products */,
+				5EDC7DC14BD04C2B9F48E188 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,11 +128,14 @@
 		7AA871CA197A6B030093CAF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AA87207197A7B4C0093CAF0 /* Accounts.framework */,
+				7AA87205197A7B470093CAF0 /* Social.framework */,
 				7AA871CB197A6B030093CAF0 /* Foundation.framework */,
 				7AA871CD197A6B030093CAF0 /* CoreGraphics.framework */,
 				7AA871CF197A6B030093CAF0 /* UIKit.framework */,
 				7AA871D1197A6B030093CAF0 /* CoreData.framework */,
 				7AA871E9197A6B030093CAF0 /* XCTest.framework */,
+				190FF94B424046D18D81CC47 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,6 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				7AA87200197A6B1A0093CAF0 /* Main.storyboard */,
+				7AA87217197AB3180093CAF0 /* couponViewController.h */,
+				7AA87218197AB3180093CAF0 /* couponViewController.m */,
+				7AA87214197AB20E0093CAF0 /* couponCard.h */,
+				7AA87215197AB20E0093CAF0 /* couponCard.m */,
 				7AA871DC197A6B030093CAF0 /* AppDelegate.h */,
 				7AA871DD197A6B030093CAF0 /* AppDelegate.m */,
 				7AA87202197A6C730093CAF0 /* UserDetailsViewController.h */,
@@ -168,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AA871FA197A6B030093CAF0 /* Build configuration list for PBXNativeTarget "valet" */;
 			buildPhases = (
+				8817115CE02148DFA7E202F2 /* Check Pods Manifest.lock */,
 				7AA871C4197A6B030093CAF0 /* Sources */,
 				7AA871C5197A6B030093CAF0 /* Frameworks */,
 				7AA871C6197A6B030093CAF0 /* Resources */,
+				0D5E05024D4247D095B2821F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +267,7 @@
 			files = (
 				7AA87201197A6B1A0093CAF0 /* Main.storyboard in Resources */,
 				7AA871D8197A6B030093CAF0 /* InfoPlist.strings in Resources */,
+				7AA8720A197A99EA0093CAF0 /* Podfile in Resources */,
 				7AA871E3197A6B030093CAF0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +282,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D5E05024D4247D095B2821F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8817115CE02148DFA7E202F2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7AA871C4197A6B030093CAF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -259,6 +322,8 @@
 			files = (
 				7AA871E1197A6B030093CAF0 /* valet.xcdatamodeld in Sources */,
 				7AA871DE197A6B030093CAF0 /* AppDelegate.m in Sources */,
+				7AA87219197AB3180093CAF0 /* couponViewController.m in Sources */,
+				7AA87216197AB20E0093CAF0 /* couponCard.m in Sources */,
 				7AA87204197A6C730093CAF0 /* UserDetailsViewController.m in Sources */,
 				7AA871DA197A6B030093CAF0 /* main.m in Sources */,
 			);
@@ -374,6 +439,7 @@
 		};
 		7AA871FB197A6B030093CAF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EDC7DC14BD04C2B9F48E188 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -387,6 +453,7 @@
 		};
 		7AA871FC197A6B030093CAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EDC7DC14BD04C2B9F48E188 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -457,6 +524,7 @@
 				7AA871FC197A6B030093CAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7AA871FD197A6B030093CAF0 /* Build configuration list for PBXNativeTarget "valetTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +533,7 @@
 				7AA871FF197A6B030093CAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

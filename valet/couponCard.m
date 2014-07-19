@@ -10,22 +10,37 @@
 
 @implementation couponCard
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+- (void)awakeFromNib {
+    
+    [super awakeFromNib];
+    
+    self.opaque = NO;
+    self.backgroundColor = [UIColor clearColor];
+    
+    self.roundedView.backgroundColor = self.color;
+    
+    self.roundedView.layer.cornerRadius = 10.0;
+    self.roundedView.layer.borderWidth = 1.0;
+    self.roundedView.layer.borderColor = [UIColor blackColor].CGColor;
+    
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+#pragma mark - Accessors
 
+
+- (void)setColor:(UIColor *)color {
+    
+    _color = [color copy];
+    
+    self.roundedView.backgroundColor = self.color;
+}
+
+#pragma mark - Methods
+
+- (void)setSelected:(BOOL)selected {
+    
+    [super setSelected:selected];
+    
+    self.roundedView.layer.borderColor = self.selected ? [UIColor whiteColor].CGColor : [UIColor blackColor].CGColor;
+}
 @end

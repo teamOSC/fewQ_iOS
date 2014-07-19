@@ -132,13 +132,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     couponCard *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CardCell" forIndexPath:indexPath];
-    NSDictionary *card = self.cards[indexPath.item];
     
-    cell.companyName = card[@"name"];
     if (indexPath.row%2==0)
     {
         cell.roundedView.backgroundColor=[UIColor blueColor];
-        
+        cell.companyName.text=[NSString stringWithFormat:@"asfjdnkj"];
     }
     else
     {

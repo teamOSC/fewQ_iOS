@@ -8,6 +8,7 @@
 
 #import "LandingPageViewController.h"
 #import "userDisplayViewController.h"
+#import "popupViewController.h"
 #import <AFPopupView/AFPopupView.h>
 #define UUID @"6470FCEB-0F6B-4609-AA4C-2D0F92F0FB2E"
 static NSString * treasureId = @"rdvApp.directionTest";
@@ -21,6 +22,7 @@ static NSString * treasureId = @"rdvApp.directionTest";
     NSString *token;
     NSString *type;
     CLBeacon *closestBeacon;
+    int x;
 }
 @end
 
@@ -46,7 +48,7 @@ static NSString * treasureId = @"rdvApp.directionTest";
     [self.beaconRegion setNotifyEntryStateOnDisplay:YES];
     [self.beaconRegion setNotifyOnEntry:YES];
     [self.beaconRegion setNotifyOnExit:YES];
-    
+    x=0;
     [self configureReceiver];
     
     [self.salesButton setHidden:YES];
@@ -75,6 +77,12 @@ static NSString * treasureId = @"rdvApp.directionTest";
         NSString *cid=[NSString stringWithFormat:@"%@,%@,%@",[closestBeacon.proximityUUID UUIDString],closestBeacon.major,closestBeacon.minor];
         [self sendHTTPGetWithEmail:email andBeaconID:cid];
         
+        
+        if ([closestBeacon proximity]==CLProximityFar && x==0)
+        {
+            [self performSegueWithIdentifier:@"popup" sender:self];
+            x=1;
+        }
     }
 }
 
@@ -167,6 +175,12 @@ static NSString * treasureId = @"rdvApp.directionTest";
         vc.history=history;
         vc.items=items;
     }
+    
+    else if ([segue.identifier isEqualToString:@"popup"])
+    {
+        popupViewController *vc=segue.destinationViewController;
+        vc.closestBeacon=closestBeacon;
+    }
 }
 
 - (IBAction)sales:(id)sender
@@ -195,41 +209,43 @@ static NSString * treasureId = @"rdvApp.directionTest";
 
 -(void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
 {
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    NSString *email=[defaults objectForKey:@"emailID"];
-    long integer=(long)[defaults objectForKey:@"rating"];
-    NSString *cid=[NSString stringWithFormat:@"%@,%@,%@,%@",[email,closestBeacon.proximityUUID UUIDString],closestBeacon.major,closestBeacon.minor];
-
-    NSString *serverAddress=[NSString stringWithFormat:@"%@?email=%@&beacon_id=%@",@"http://tosc.in:8080/feedback",email,cid];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
-                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                                       timeoutInterval:10];
-    
-    [request setHTTPMethod: @"GET"];
     
     
-    NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:myQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (data!=nil)
-        {
-            NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@",newStr);
-            
-            NSDictionary *jsonDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            if ([jsonDict isKindOfClass:[NSDictionary class]] )
-            {
-                items=[jsonDict objectForKey:@"items"];
-                token=[jsonDict objectForKey:@"token"];
-                history=[jsonDict objectForKey:@"history"];
-                [myQueue cancelAllOperations];
-                
-            }
-            
-        }
-        
-        
-    }];
+//    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+//    NSString *email=[defaults objectForKey:@"emailID"];
+//    long integer=(long)[defaults objectForKey:@"rating"];
+//    NSString *cid=[NSString stringWithFormat:@"%@,%@,%@,%@",[email,closestBeacon.proximityUUID UUIDString],closestBeacon.major,closestBeacon.minor];
+//
+//    NSString *serverAddress=[NSString stringWithFormat:@"%@?email=%@&beacon_id=%@",@"http://tosc.in:8080/feedback",email,cid];
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
+//                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+//                                                       timeoutInterval:10];
+//    
+//    [request setHTTPMethod: @"GET"];
+//    
+//    
+//    NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
+//    
+//    [NSURLConnection sendAsynchronousRequest:request queue:myQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//        if (data!=nil)
+//        {
+//            NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//            NSLog(@"%@",newStr);
+//            
+//            NSDictionary *jsonDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//            if ([jsonDict isKindOfClass:[NSDictionary class]] )
+//            {
+//                items=[jsonDict objectForKey:@"items"];
+//                token=[jsonDict objectForKey:@"token"];
+//                history=[jsonDict objectForKey:@"history"];
+//                [myQueue cancelAllOperations];
+//                
+//            }
+//            
+//        }
+//        
+//        
+//    }];
 
 }
 

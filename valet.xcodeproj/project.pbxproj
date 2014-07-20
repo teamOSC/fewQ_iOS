@@ -36,6 +36,13 @@
 		7AA87225197B15D30093CAF0 /* userDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87224197B15D30093CAF0 /* userDisplayViewController.m */; };
 		7AA87228197B20450093CAF0 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87227197B20450093CAF0 /* AsyncImageView.m */; };
 		7AA8722C197B2A130093CAF0 /* userDisplayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA8722B197B2A130093CAF0 /* userDisplayTableViewCell.m */; };
+		7AA87238197B56120093CAF0 /* ASStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA87230197B56120093CAF0 /* ASStarRatingView.m */; };
+		7AA87239197B56120093CAF0 /* half_selected_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87232197B56120093CAF0 /* half_selected_star.png */; };
+		7AA8723A197B56120093CAF0 /* half_selected_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87233197B56120093CAF0 /* half_selected_star@2x.png */; };
+		7AA8723B197B56120093CAF0 /* not_selected_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87234197B56120093CAF0 /* not_selected_star.png */; };
+		7AA8723C197B56120093CAF0 /* not_selected_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87235197B56120093CAF0 /* not_selected_star@2x.png */; };
+		7AA8723D197B56120093CAF0 /* selected_star.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87236197B56120093CAF0 /* selected_star.png */; };
+		7AA8723E197B56120093CAF0 /* selected_star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AA87237197B56120093CAF0 /* selected_star@2x.png */; };
 		C72EB68AF55C493A86B5CAB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 190FF94B424046D18D81CC47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +98,14 @@
 		7AA87227197B20450093CAF0 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		7AA8722A197B2A130093CAF0 /* userDisplayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userDisplayTableViewCell.h; sourceTree = "<group>"; };
 		7AA8722B197B2A130093CAF0 /* userDisplayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userDisplayTableViewCell.m; sourceTree = "<group>"; };
+		7AA8722F197B56120093CAF0 /* ASStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASStarRatingView.h; sourceTree = "<group>"; };
+		7AA87230197B56120093CAF0 /* ASStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASStarRatingView.m; sourceTree = "<group>"; };
+		7AA87232197B56120093CAF0 /* half_selected_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = half_selected_star.png; sourceTree = "<group>"; };
+		7AA87233197B56120093CAF0 /* half_selected_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "half_selected_star@2x.png"; sourceTree = "<group>"; };
+		7AA87234197B56120093CAF0 /* not_selected_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = not_selected_star.png; sourceTree = "<group>"; };
+		7AA87235197B56120093CAF0 /* not_selected_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not_selected_star@2x.png"; sourceTree = "<group>"; };
+		7AA87236197B56120093CAF0 /* selected_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_star.png; sourceTree = "<group>"; };
+		7AA87237197B56120093CAF0 /* selected_star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected_star@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +180,7 @@
 		7AA871D3197A6B030093CAF0 /* valet */ = {
 			isa = PBXGroup;
 			children = (
+				7AA8722E197B56120093CAF0 /* ASStarRatingView */,
 				7AA87229197B21C60093CAF0 /* asyncImage */,
 				7AA87221197AFB3C0093CAF0 /* beaconDetails */,
 				7AA87200197A6B1A0093CAF0 /* Main.storyboard */,
@@ -233,6 +249,29 @@
 				7AA87224197B15D30093CAF0 /* userDisplayViewController.m */,
 			);
 			name = userDisplay;
+			sourceTree = "<group>";
+		};
+		7AA8722E197B56120093CAF0 /* ASStarRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				7AA8722F197B56120093CAF0 /* ASStarRatingView.h */,
+				7AA87230197B56120093CAF0 /* ASStarRatingView.m */,
+				7AA87231197B56120093CAF0 /* stars */,
+			);
+			path = ASStarRatingView;
+			sourceTree = "<group>";
+		};
+		7AA87231197B56120093CAF0 /* stars */ = {
+			isa = PBXGroup;
+			children = (
+				7AA87232197B56120093CAF0 /* half_selected_star.png */,
+				7AA87233197B56120093CAF0 /* half_selected_star@2x.png */,
+				7AA87234197B56120093CAF0 /* not_selected_star.png */,
+				7AA87235197B56120093CAF0 /* not_selected_star@2x.png */,
+				7AA87236197B56120093CAF0 /* selected_star.png */,
+				7AA87237197B56120093CAF0 /* selected_star@2x.png */,
+			);
+			path = stars;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,9 +353,15 @@
 			files = (
 				7AA87222197AFB3C0093CAF0 /* beaconDetails in Resources */,
 				7AA87201197A6B1A0093CAF0 /* Main.storyboard in Resources */,
+				7AA8723E197B56120093CAF0 /* selected_star@2x.png in Resources */,
+				7AA8723B197B56120093CAF0 /* not_selected_star.png in Resources */,
 				7AA871D8197A6B030093CAF0 /* InfoPlist.strings in Resources */,
 				7AA8720A197A99EA0093CAF0 /* Podfile in Resources */,
+				7AA8723C197B56120093CAF0 /* not_selected_star@2x.png in Resources */,
+				7AA8723A197B56120093CAF0 /* half_selected_star@2x.png in Resources */,
 				7AA871E3197A6B030093CAF0 /* Images.xcassets in Resources */,
+				7AA8723D197B56120093CAF0 /* selected_star.png in Resources */,
+				7AA87239197B56120093CAF0 /* half_selected_star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +415,7 @@
 			files = (
 				7AA8721C197AF44D0093CAF0 /* LandingPageViewController.m in Sources */,
 				7AA87228197B20450093CAF0 /* AsyncImageView.m in Sources */,
+				7AA87238197B56120093CAF0 /* ASStarRatingView.m in Sources */,
 				7AA871E1197A6B030093CAF0 /* valet.xcdatamodeld in Sources */,
 				7AA87225197B15D30093CAF0 /* userDisplayViewController.m in Sources */,
 				7AA871DE197A6B030093CAF0 /* AppDelegate.m in Sources */,

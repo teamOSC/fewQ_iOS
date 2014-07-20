@@ -11,6 +11,8 @@
 @interface userDisplayViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property NSMutableArray *items;
 @property NSString *token;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *history;
+@property (weak, nonatomic) IBOutlet UILabel *tokenLabel;
 @property NSString *type;
 @end

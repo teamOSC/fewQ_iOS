@@ -11,5 +11,8 @@
 #import <CoreLocation/CoreLocation.h>
 @interface LandingPageViewController : UIViewController<CLLocationManagerDelegate,NSURLSessionDelegate>
 @property (strong, nonatomic) CLBeaconRegion *beaconRegion;
+@property (weak, nonatomic) IBOutlet UIButton *salesButton;
+@property (weak, nonatomic) IBOutlet UIButton *servicesButton;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
 @end

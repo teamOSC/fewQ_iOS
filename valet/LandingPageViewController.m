@@ -46,6 +46,9 @@ static NSString * treasureId = @"rdvApp.directionTest";
     [self.beaconRegion setNotifyOnExit:YES];
     
     [self configureReceiver];
+    
+    [self.salesButton setHidden:YES];
+    [self.servicesButton setHidden:YES];
     // Do any additional setup after loading the view.
 }
 
@@ -75,39 +78,54 @@ static NSString * treasureId = @"rdvApp.directionTest";
 
 -(void) sendHTTPGetWithEmail:(NSString *)email andBeaconID:(NSString *)cid
 {
-
-    NSString *serverAddress=[NSString stringWithFormat:@"%@?email=%@&beacon_id=%@",@"http://tosc.in:8080/customer_in",email,cid];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
-                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                                       timeoutInterval:10];
-    
-    [request setHTTPMethod: @"GET"];
-    
-   
-    NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
-
-    [NSURLConnection sendAsynchronousRequest:request queue:myQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (data!=nil)
-        {
-            NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@",newStr);
-            
-            NSDictionary *jsonDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            if ([jsonDict isKindOfClass:[NSDictionary class]] )
+    if (![[self.navigationController topViewController] isKindOfClass:[userDisplayViewController class]] && [items count]<=0)
+    {
+        NSString *serverAddress=[NSString stringWithFormat:@"%@?email=%@&beacon_id=%@",@"http://tosc.in:8080/customer_in",email,cid];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
+                                                               cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                           timeoutInterval:10];
+        
+        [request setHTTPMethod: @"GET"];
+        
+        
+        NSOperationQueue *myQueue = [[NSOperationQueue alloc] init];
+        
+        [NSURLConnection sendAsynchronousRequest:request queue:myQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            if (data!=nil)
             {
-                items=[jsonDict objectForKey:@"items"];
-                token=[jsonDict objectForKey:@"token"];
-                history=[jsonDict objectForKey:@"history"];
-                [myQueue cancelAllOperations];
-                [self performSegueWithIdentifier:@"userDisplay" sender:self];
+                NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSLog(@"%@",newStr);
+                
+                NSDictionary *jsonDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                if ([jsonDict isKindOfClass:[NSDictionary class]] )
+                {
+                    items=[jsonDict objectForKey:@"items"];
+                    token=[jsonDict objectForKey:@"token"];
+                    history=[jsonDict objectForKey:@"history"];
+                    [myQueue cancelAllOperations];
+                    
+                }
                 
             }
-
-        }
-}];
-
+            
+            
+        }];
+    }
     
     
+    if ([items count]>0)
+    {
+        [self.servicesButton setHidden:NO];
+        [self.salesButton setHidden:NO];
+        [self.loadingLabel setHidden:YES];
+    }
+    
+    
+    
+
+
+    
+
     
     
 }
@@ -127,13 +145,43 @@ static NSString * treasureId = @"rdvApp.directionTest";
     {
         userDisplayViewController *vc=segue.destinationViewController;
         vc.token=token;
-    
-        vc.type=type;
+        if (sender==self.salesButton)
+        {
+            vc.type=@"mall";
+        }
+        
+        else
+        {
+            vc.type=@"services";
+        }
+        
         vc.history=history;
         vc.items=items;
     }
 }
 
+- (IBAction)sales:(id)sender
+{
+    if (items)
+    {
+        if (![[self.navigationController topViewController] isKindOfClass:[userDisplayViewController class]]) {
+            [self performSegueWithIdentifier:@"userDisplay" sender:sender];
+        }
+        
+    }
+}
+
+- (IBAction)services:(id)sender
+{
+    if (items)
+    {
+        if (![[self.navigationController topViewController] isKindOfClass:[userDisplayViewController class]]) {
+            [self performSegueWithIdentifier:@"userDisplay" sender:sender];
+        }
+        
+    }
+
+}
 
 
 

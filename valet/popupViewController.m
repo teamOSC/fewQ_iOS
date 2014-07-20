@@ -9,6 +9,9 @@
 #import "popupViewController.h"
 @interface popupViewController ()
 @property(nonatomic, retain) UILabel *rateLabel;
+@property (nonatomic, strong) NSString *item;
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSDictionary *jsonDict;
 
 @end
 
@@ -26,7 +29,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *serverAddress=[NSString stringWithFormat:@"%@?email=%@&beacon_id=%@",@"http://tosc.in:8080/customer_out",@"m@m.com",@"1"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"GET"];
+    
+    NSHTTPURLResponse *response = NULL;
 
+    NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    if (data!=nil)
+        {
+            NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@" the new data %@",newStr);
+            
+            self.jsonDict=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
+        }
+        
+        
+
+    
+    self.item=[_jsonDict objectForKey:@"item"];
+    self.date=[_jsonDict objectForKey:@"date"];
+    
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSString *name=[defaults objectForKey:@"name"];
+    self.transactionText.text=[NSString stringWithFormat:@"Congratulations on your purchase of %@ on date %@. Your credit card statement will be emailed yo you shortly,%@",self.item,self.date,name];
+
+    
+    
     self.view.backgroundColor = [UIColor whiteColor];
 
     // Do any additional setup after loading the view.
